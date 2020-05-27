@@ -1,0 +1,36 @@
+\BOOKMARK [1][-]{section.1}{总览}{}% 1
+\BOOKMARK [1][-]{section.2}{参考资料}{}% 2
+\BOOKMARK [1][-]{section.3}{椭圆曲线基本概念}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{基本场景}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{基本形式}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{椭圆曲线群运算}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.4}{映射空间\(Projective Space\)}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.5}{椭圆曲线于密码学中的应用}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.6}{总结}{section.3}% 9
+\BOOKMARK [1][-]{section.4}{椭圆曲线进阶知识*}{}% 10
+\BOOKMARK [2][-]{subsection.4.1}{群环域}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.2}{同构概念}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.3}{有限域}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.4}{代数闭包\(algebraic closure\)}{section.4}% 14
+\BOOKMARK [2][-]{subsection.4.5}{Frobenius\040map}{section.4}% 15
+\BOOKMARK [2][-]{subsection.4.6}{Singular\040Curve}{section.4}% 16
+\BOOKMARK [2][-]{subsection.4.7}{Torsion\040Points}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.8}{有限域的椭圆曲线}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.9}{Hasse定理}{section.4}% 19
+\BOOKMARK [2][-]{subsection.4.10}{如何确定群的阶}{section.4}% 20
+\BOOKMARK [2][-]{subsection.4.11}{Schoof算法}{section.4}% 21
+\BOOKMARK [2][-]{subsection.4.12}{Supersingular\040Curve}{section.4}% 22
+\BOOKMARK [2][-]{subsection.4.13}{求解离散对数算法}{section.4}% 23
+\BOOKMARK [2][-]{subsection.4.14}{离散对数问题的阶选取}{section.4}% 24
+\BOOKMARK [2][-]{subsection.4.15}{Mov\040Attack}{section.4}% 25
+\BOOKMARK [2][-]{subsection.4.16}{Anomalous\040Curve}{section.4}% 26
+\BOOKMARK [2][-]{subsection.4.17}{椭圆曲线其他应用}{section.4}% 27
+\BOOKMARK [2][-]{subsection.4.18}{有理数域上的椭圆曲线}{section.4}% 28
+\BOOKMARK [2][-]{subsection.4.19}{复数域上的椭圆曲线}{section.4}% 29
+\BOOKMARK [1][-]{section.5}{pairing的基本实现}{}% 30
+\BOOKMARK [2][-]{subsection.5.1}{定义}{section.5}% 31
+\BOOKMARK [2][-]{subsection.5.2}{Divisor}{section.5}% 32
+\BOOKMARK [2][-]{subsection.5.3}{定义域}{section.5}% 33
+\BOOKMARK [2][-]{subsection.5.4}{Miller’s algorithm}{section.5}% 34
+\BOOKMARK [2][-]{subsection.5.5}{Weil\040and\040Tate\040pairings}{section.5}% 35
+\BOOKMARK [2][-]{subsection.5.6}{选取pairing friendly的曲线}{section.5}% 36
