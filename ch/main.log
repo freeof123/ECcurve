@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.7.2)  27 MAY 2020 17:02
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.7.2)  27 MAY 2020 17:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3301,9 +3301,9 @@ File: ../common/logo.png Graphic file (type bmp)
 <../common/logo.png>
  [2]
 LaTeX Font Info:    External font `cmex7' loaded for size
-(Font)              <7> on input line 150.
+(Font)              <7> on input line 151.
 LaTeX Font Info:    External font `cmex7' loaded for size
-(Font)              <5> on input line 150.
+(Font)              <5> on input line 151.
 File: ../common/ecshape.png Graphic file (type bmp)
 <../common/ecshape.png>
 File: ../common/logo.png Graphic file (type bmp)
@@ -3393,7 +3393,7 @@ File: ../common/logo.png Graphic file (type bmp)
  [27]
 
 LaTeX Font Warning: Font shape `TU/bch/m/it' undefined
-(Font)              using `TU/bch/m/n' instead on input line 751.
+(Font)              using `TU/bch/m/n' instead on input line 752.
 
 File: ../common/logo.png Graphic file (type bmp)
 <../common/logo.png>
@@ -3407,18 +3407,18 @@ File: ../common/logo.png Graphic file (type bmp)
 File: ../common/logo.png Graphic file (type bmp)
 <../common/logo.png>
  [31]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 818.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 818.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 819.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 819.
  (./main.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 818.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 818.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 819.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 819.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: CFF6FC1BFDA1B2A18FAA07A7301987C3.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 818.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 819.
  ) 
 Here is how much of TeX's memory you used:
  49617 strings out of 492970
