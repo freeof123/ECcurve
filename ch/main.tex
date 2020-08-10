@@ -5,6 +5,7 @@
 \usepackage{amssymb}
 \usepackage{exscale}
 \usepackage{relsize}
+\usepackage{float}
 %\usepackage[ruled,vlined]{algorithm2e}
 
 \setCJKmainfont[BoldFont = STSongti-SC-Bold]{STSongti-SC-Regular}
@@ -75,16 +76,20 @@
 
 \begin{titlepage}
   \begin{center}
-    \vspace*{5.5cm}
-    \includegraphics[scale=0.5]{../common/logo.png}
-    \vspace{0.5cm}
+    \vspace*{2.5cm}
+    \includegraphics[scale=0.2]{../common/logo.png}\\
+    \includegraphics[scale=0.2]{../common/yeez.png}
+
+    \vspace{3.5cm}
+
+
 
 
    \textbf{\huge{椭圆曲线科普}}
 
-    \vspace{0.5cm}
+    \vspace{2.5cm}
     ASResearch\\
-    曾驭龙
+    YeeZTech
     \textbf{}
   \end{center}
 
@@ -295,7 +300,7 @@ $$(x,y) \rightarrow (x,y,1), ~\oo \rightarrow (0,1,0)$$
 	\item 解密过程（给定私钥$s$，密文$(M_1,M_2)$）：
    \begin{itemize}
    	    \item 计算$M=M_2-sM_1$，$M$即为明文信息。
-   \end{itemize} 
+   \end{itemize}
 \end{itemize}
 值得一提的是，上述加密过程的安全性依赖DDH假设的正确性。这个假设对于某些特殊的椭圆曲线（如$y^2= x^3+1$）也是不成立的。具体分析见下一章。
 
@@ -307,14 +312,14 @@ $$(x,y) \rightarrow (x,y,1), ~\oo \rightarrow (0,1,0)$$
         \item 计算$H_1(R,Z)$并将结果写成$k_1||k_2$，其中$k_1,k_2$的长度事先约定好。
         \item 计算$C=Enc_{k_1}(m),t = H_2(C,k_2)$
         \item 密文为$(R,C,t)$
-   \end{itemize} 
+   \end{itemize}
 	\item 解密过程（给定私钥$s$，密文$(R,C,t)$）：
 	\begin{itemize}
 		\item 计算$Z=	sR$
 		\item 计算$H_1(R,Z)$并将结果写成$k_1||k_2$
 		\item 计算$H_2(C,k_2)$，如果结果不等于$t$，拒绝此密文并退出。
 		\item 计算$m=Dec_{k_1}(C)$，$m$记为明文信息
-	\end{itemize} 
+	\end{itemize}
 \end{itemize}
 在很多加解密系统中，允许用户任意输入密文然后要求程序返回解密结果，这样容易造成信息暴露。而ECIES保证如果用户给了不合法输入（不是某个明文的加密结果）时会拒绝，且对于随机输入能成为合法输入的概率很低。故防止了类似攻击，
 
@@ -333,7 +338,7 @@ $$(x,y) \rightarrow (x,y,1), ~\oo \rightarrow (0,1,0)$$
 	\begin{itemize}
 		\item 计算$V_1=f(R)B+s_1R,V_2=mP$
 		\item 判断$V_1 \overset{?}{=} V_2$
-	\end{itemize} 
+	\end{itemize}
 \end{itemize}
 其正确性读者可自行验证（注意到对于任何$P \in E(F_p)$，一定有$qP=\oo$）。
 
@@ -708,7 +713,7 @@ $$f_{2m,P} = f^2_{m,P}\cdot \frac{\ell_{mP,mP}}{v_{2mP}},$$
 最为著名的两个pairing函数为Weil和Tate。两者本质上类似，Tate在实际中更具有可用性，但这里我们先介绍Weil。
 
 \textbf{给定$P,Q \in E(\fpk)[r]$，然后假设有Divisor $D_P, D_Q \in Div^0$满足$D_P \sim [P]-[\oo], D_Q \sim [Q]-[\oo]$且$D_P, D_Q$的support不相交（recall Weil reciprocity的限定条件），那么一定存在函数$f,g$，满足$[f] = rD_p$且$[g]=rD_Q$。}
-	
+
 \textbf{ Weil pairing $\omega_r: E(\fpk)[r] \times E(\fpk)[r] \rightarrow \mu_r$定义为
 $$ w_r(P,Q) = \frac{f(D_Q)}{g(D_P)}$$
 其中$\mu_r$为某个$r$次单位根（$\mu_r^r =1$，定义在$\fpk$上）。
@@ -744,14 +749,14 @@ $$T_r(P,Q) = t_r(P,Q)^{\# \fpk/r} = f_{r,P}(D_Q)^{(q^k-1)/r}$$
     $R \leftarrow P, f \leftarrow 1$.\;
     \For {$i=n-2$ down to $0$}
         { 计算直线$\ell_{R,R},v_{2R}$的函数\;
-         $R \leftarrow 2R$\;        
+         $R \leftarrow 2R$\;
          $f \leftarrow f^2\cdot \frac{\ell_{R,R}}{v_{2R}}(D_Q)$\;
          \If {$r_i=1$}
          {
          	  计算直线$\ell_{R,P},v_{R+P}$的函数\;
          	  $R \leftarrow R+P$\;
          	  $f \leftarrow f\cdot \frac{\ell_{R,P}}{v_{R+P}}(D_Q)$\;
-         } 
+         }
    }
    \KwRet $f$.\;
 	\label{alg:miller}
@@ -774,14 +779,14 @@ $$T_r(P,Q) = t_r(P,Q)^{\# \fpk/r} = f_{r,P}(D_Q)^{(q^k-1)/r}$$
 	$R \leftarrow P, f \leftarrow 1$.\;
 	\For {$i=n-2$ down to $0$}
 	{ 计算直线$\ell_{R,R}$的函数\;
-		$R \leftarrow 2R$\;        
+		$R \leftarrow 2R$\;
 		$f \leftarrow f^2\cdot \ell_{R,R}(Q)$\;
 		\If {$r_i=1$}
 		{
 			计算直线$\ell_{R,P}$的函数\;
 			$R \leftarrow R+P$\;
 			$f \leftarrow f\cdot \ell_{R,P}(Q)$
-		} 
+		}
 	}
 	\KwRet $f \leftarrow f^{(q^k-1)/r}$.
 	\label{alg:BKLS}
