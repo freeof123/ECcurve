@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.7.2)  27 MAY 2020 17:28
+This is XeTeX, Version 3.14159265-2.6-0.99999 (TeX Live 2018) (preloaded format=xelatex 2019.7.2)  10 AUG 2020 15:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3382,43 +3382,49 @@ File: ../common/torsion.png Graphic file (type bmp)
 File: ../common/logo.png Graphic file (type bmp)
 <../common/logo.png>
  [25]
-Overfull \vbox (0.53476pt too high) has occurred while \output is active []
-
 File: ../common/logo.png Graphic file (type bmp)
 <../common/logo.png>
-
-[26]
+ [26]
 File: ../common/logo.png Graphic file (type bmp)
 <../common/logo.png>
  [27]
+File: ../common/logo.png Graphic file (type bmp)
+<../common/logo.png>
+ [28]
 
 LaTeX Font Warning: Font shape `TU/bch/m/it' undefined
-(Font)              using `TU/bch/m/n' instead on input line 752.
+(Font)              using `TU/bch/m/n' instead on input line 756.
 
 File: ../common/logo.png Graphic file (type bmp)
 <../common/logo.png>
-[28]
-File: ../common/logo.png Graphic file (type bmp)
-<../common/logo.png>
- [29]
+[29]
 File: ../common/logo.png Graphic file (type bmp)
 <../common/logo.png>
  [30]
 File: ../common/logo.png Graphic file (type bmp)
 <../common/logo.png>
  [31]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 819.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 819.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 823.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 823.
  (./main.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 819.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 819.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: CFF6FC1BFDA1B2A18FAA07A7301987C3.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 823.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 823.
 
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: CFF6FC1BFDA1B2A18FAA07A7301987C3
+(rerunfilecheck)             After:  795B19F71611768E049A041304AFDA19.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 819.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 823.
  ) 
 Here is how much of TeX's memory you used:
  49617 strings out of 492970

@@ -106,7 +106,7 @@
 \begin{itemize}
 	\item 为什么椭圆曲线会作为加密（包括签名）体系的首选。（相比于RSA，传统离散对数）
 	\item 椭圆曲线计算的基本实现以及时间复杂度。
-	\item pairing函数基本实现以及时间复杂度。（pairing作为ZKSnark的核心之一，是整个本文涉及技术，甚至是整个椭圆曲线技术的最高点之一，其定义会在之后介绍。）
+	\item pairing函数基本实现以及时间复杂度。（pairing作为zkSNARK的核心之一，是整个本文涉及技术，甚至是整个椭圆曲线技术的最高点之一，其定义会在之后介绍。）
 \end{itemize}
 值得一提的是，有人可能会说作为椭圆曲线工程上的实现并不需要理解上述问题，这的确是事实。但是即使是用别人的库，了解上述问题也确有可取之处：一方面有助于通读代码，另一方面可以掌握其背后的时间开销，对于做技术选型提供参考。同时，在理论层面，理解底层原理自然有助于吸收不断更新的区块链新技术。
 
@@ -380,7 +380,11 @@ $$(x,y) \rightarrow (x,y,1), ~\oo \rightarrow (0,1,0)$$
 \end{itemize}
 一个（有限）群$G$的元素个数称为群的阶，记作$\#G$。
 
-一个群元素$P$的阶为最小的整数$k$使得$kP = \oo$（$k$个$P$进行群运算，$\oo$为单位元）称为$P$的阶。如果一个元素$P$的阶等于群的阶，则$P$是$G$的一个生成元，且$G=\{P,2P,...\}$是一个cyclic group。
+一个群元素$P$的阶为最小的整数$k$使得$kP = \oo$（$k$个$P$进行群运算，$\oo$为单位元）称为$P$的阶。
+
+群内任何一个元素的阶一定整除群的阶。
+
+如果一个元素$P$的阶等于群的阶，则$P$是$G$的一个生成元，且$G=\{P,2P,...\}$是一个cyclic group。
 
 %两个群$\mathbb{G}_1,\mathbb{G}_2$同构是指存在一个映射$\phi: \mathbb{G}_1 \rightarrow \mathbb{G_2}$
 
@@ -417,7 +421,7 @@ $$(x,y) \rightarrow (x,y,1), ~\oo \rightarrow (0,1,0)$$
 
 如前所述，$\mathbb{Z}_{p^2}$并不是有限域，事实上，$\mathbb{F}_{p^2}$的一个表现形式为
 $$\{ a+bi | a \in \fp, b \in \fp \},$$
-其中$i^2 = -1$。这种表示相当于对$\fp$做了一个域扩展(Field Extension)$\fp[x]/(x^2+1)$\footnote{两个群的商$\mathbb{A}/\mathbb{B}$表示$\mathbb{B}$对$\mathbb{A}$中所有元素的coset，即$\{a+\mathbb{B}| a \in \mathbb{A}\}$。换言之，如果$\mathbb{A}$中两个元素的差在$\mathbb{B}$中，则认为这两个元素在$\mathbb{A}/\mathbb{B}$中相同。参考quotient group}。还有其他的很多Field Extension也符合$\mathbb{F}_{p^2}$定义（只要用于扩展的多项式在$\fp$内不可约）。
+其中$i^2 = -1$。这种表示相当于对$\fp$做了一个域扩展(Field Extension)$\fp[x]/(x^2+1)$\footnote{两个群的商$\mathbb{A}/\mathbb{B}$表示$\mathbb{B}$对$\mathbb{A}$中所有元素的coset，即$\{a+\mathbb{B}| a \in \mathbb{A}\}$。换言之，如果$\mathbb{A}$中两个元素的差在$\mathbb{B}$中，则认为这两个元素在$\mathbb{A}/\mathbb{B}$中相同。有时用$\mathbb{A}/\mathbb{B}$表示这样一个等价关系的完全代表系。参考quotient group，等价类}。还有其他的很多Field Extension也符合$\mathbb{F}_{p^2}$定义（只要用于扩展的多项式在$\fp$内不可约）。
 
 有限域的特征值（characteristic）为最小的正整数$k$使得$k$个乘法单位元（1）加起来等于加法单位元（0）。$GF(p^n)$的特征值为$p$。
 \subsection{代数闭包(algebraic closure)}
@@ -430,7 +434,7 @@ $$P \in E(\bar{\mathbb{K}})$$
 \subsection{Frobenius map}
 给定一个系数定义域为$\mathbb{F}_q$的椭圆曲线$E$，Frobenius map是一个从$E(\bar{\mathbb{F}}_q)$到自身的映射，定义为
 $$\phi_q(x,y) = (x^q,y^q)$$
-关于Frobenius map的主要定理为它是一个endomorphism，即这个映射在群运算下保持结构。（如果$\mathbb{K}=\fq$，且$(x,y) \in \fq$，有定理表明此时$\phi_q$为不动映射，称为trivial。但注意$(x,y)$的取值为$\fq$的algebraic closure，可以超出$\fq$的范围。）
+关于Frobenius map的主要定理为它是一个endomorphism，即这个映射在群运算下保持结构。（如果$\mathbb{K}=\fq$，且$(x,y) \in \fq$，有定理表明此时$\phi_q$为不动映射，称为trivial（平凡）。但注意$(x,y)$的取值为$\fq$的algebraic closure，可以超出$\fq$的范围。）
 \subsection{Singular Curve}
 Singular Curve对应$x^3+Ax+B$有重根的情形。我们可以通过转化将这个重根变成0，同时方程变为$y^2=x^2(x+a)$。假设$a$的定义域为$\mathbb{K}$
 
@@ -497,10 +501,10 @@ Supersingular Curves为一类椭圆曲线满足定义域特征值为$p$（如$\f
 
 假设$E$定义在$\fq$上（指系数定义在$\fq$上，在算Torsion Points时需要考虑来源于$\bar{\mathbb{F}_q}$的点），$q=p^n$上，判断$E$是否Supersingular和$E(\fq)$的阶有关
 \begin{itemize}
-	\item 如果$E$是Supersingular，则$a \bmod p =0$，亦即$\# E(\fq) \bmod p =1$。特别的，如果$q=p$，则$a=0$，$\# E(\fp)=p+1$
+	\item 如果$E$是supersingular，则$a \bmod p =0$，亦即$\# E(\fq) \bmod p =1$。特别的，如果$q=p$，则$a=0$，$\# E(\fp)=p+1$
 	\item 如果$q$是奇数且$q \bmod 3=2$，$B \in F^*_q$，则定义在$F_q$上的曲线$y^2=x^3+B$是Supersingular。
 \end{itemize}
-Supersingular的一个有用性质为，他可以很快的算出一个点的倍数（比二分求幂更快）。基于Supersingular Curve的DDH（离散对数相关，即给定$aP,bP$，无法判断$abP$和一个随机$cP$的区别）假设不成立。
+Supersingular的一个有用性质为，他可以很快的算出一个点的倍数（比二分求幂更快）。%基于Supersingular Curve的DDH（离散对数相关，即给定$aP,bP$，无法判断$abP$和一个随机$cP$的区别）假设不成立。
 \subsection{求解离散对数算法}
 我们先看针对传统的离散对数$a^x \bmod p = b$的求解方法。这时群运算基于乘法群$\{1,2,...,q\}$，阶为$q$。虽然根据费马小定理$q=p-1$构成一个cycplic group群，但因为安全性原因（下面会介绍）我们更希望$q$为质数。解决的方法为我们尝试找一组$(p,q)$使得$p=rq+1$且$p,q$均为质数，$r$ 不是特别大。然后，把$\mathbb{F}_p^*$的$r$次剩余类，即子群
 $$\mathbb{G} = \{g^r \bmod p | g \in \mathbb{F}_p^*\}$$
@@ -575,7 +579,7 @@ Anomalous Curve的特点是能快速计算离散对数，甚至比Mov Attack更�
 	$$\mathbb{L}= \{n_1\omega_1+n_2\omega_2|n_1,n_2 \in \mathbb{Z}\}$$
 \end{itemize}
 
-\section{pairing的基本实现}
+\section{Pairing的基本实现}
 本章不会介绍太多的技术细节，其目的是让读者对pairing (bilinear mapping)的基本实现有所了解，并理解其时间复杂度。
 
 \subsection{定义}
